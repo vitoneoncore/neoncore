@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeonCore Development</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #09060f;
+      color: white;
+    }
+
+    header {
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #29163e;
+    }
+
+    .logo { font-size: 22px; font-weight: bold; }
+    .logo span { color: #b45cff; }
+
+    nav a {
+      color: #ddd0ed;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 110px 20px 90px;
+      background: radial-gradient(ellipse at top, #351054 0%, #09060f 65%);
+    }
+
+    .tag {
+      color: #d5a5ff;
+      letter-spacing: 4px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 76px);
+      margin: 22px 0;
+    }
+
+    h1 span { color: #bd72ff; }
+
+    .hero p {
+      color: #c4b7d3;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 30px 8px 0;
+      padding: 14px 23px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #9b42e8;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid #9b42e8;
+      color: white;
+    }
+
+    section { padding: 65px 8%; }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    h2 span { color: #bd72ff; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #120c1b;
+      border: 1px solid #352047;
+      border-radius: 13px;
+      padding: 28px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      border-color: #b45cff;
+      transform: translateY(-4px);
+    }
+
+    .card h3 { margin-bottom: 12px; color: #d5a5ff; }
+    .card p { color: #bdb0cb; line-height: 1.6; }
+
+    .portfolio {
+      text-align: center;
+      background: #0e0915;
+    }
+
+    .portfolio p, .contact p {
+      color: #c4b7d3;
+      line-height: 1.8;
+    }
+
+    .contact { text-align: center; }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: #887a98;
+      border-top: 1px solid #29163e;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 18px; }
+      nav a { margin: 0 7px; font-size: 14px; }
+      .hero { padding-top: 75px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NEONCORE <span>DEVELOPMENT</span></div>
+    <nav>
+      <a href="#servicii">Servicii</a>
+      <a href="#portofoliu">Portofoliu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="tag">CREATIVE STUDIO</div>
+      <h1>WE BUILD YOUR <span>VISION.</span></h1>
+      <p>Transformăm ideile în proiecte digitale.<br>
+      Development, Mapping, Design și Support.</p>
+      <a class="button primary"
+         href="https://discord.gg/neoncore" target="_blank"
+         rel="noopener noreferrer">Intră pe Discord ↗</a>
+      <a class="button secondary" href="#servicii">Descoperă serviciile</a>
+    </div>
+
+    <section id="servicii">
+      <h2>Serviciile <span>noastre</span></h2>
+      <div class="services">
+        <div class="card">
+          <h3>⌨ Development</h3>
+          <p>Dezvoltare de scripturi și soluții pentru proiectele tale.</p>
+        </div>
+        <div class="card">
+          <h3>🌐 Mapping</h3>
+          <p>Concepte și lucrări de mapping pentru proiecte de gaming.</p>
+        </div>
+        <div class="card">
+          <h3>✦ Design</h3>
+          <p>Identitate vizuală, logo-uri și grafică pentru comunități.</p>
+        </div>
+        <div class="card">
+          <h3>◈ Support</h3>
+          <p>Asistență și îndrumare pentru clienții și membrii comunității.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portofoliu">
+      <h2>Porto<span>foliu</span></h2>
+      <p>În curând, aici vor apărea proiectele NeonCore Development.</p>
+      <p>Nu afișăm proiecte fictive. Revenim cu lucrările reale ale echipei.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Hai să <span>discutăm</span></h2>
+      <p>Ai un proiect sau o idee? Contactează-ne pe Discord.</p>
+      <a class="button primary"
+         href="https://discord.gg/neoncore" target="_blank"
+         rel="noopener noreferrer">Contactează NeonCore</a>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> NeonCore Development. Toate drepturile rezervate.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
